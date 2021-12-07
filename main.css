@@ -1,0 +1,67 @@
+img {
+    background-color: bisque;
+    /* border-style: solid; */
+    width: 100px;
+}
+
+img:hover {
+    border-color: red;
+}
+
+.store-front {
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.store-item {
+    border-style: double none none double;
+    border-color: gray;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.payment-methods {
+    background-color: floralwhite;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+.payment-method {
+    /* border-style: solid; */
+}
+
+.payment-methods img  {
+    background-color: transparent;
+    
+}
+
+
+.payment-method-big {
+    /* border-style: solid; */
+}
+
+.clothes {
+    background-color: darkcyan;
+}
+
+.food {
+    background-color: darkseagreen;
+}
+
+.discount {
+    border-radius: 20%;
+    border-style: dotted;
+}
+
+.out-of-stock {
+    border-radius: 50%;
+}
+
+.out-of-stock:hover {
+    background-color: red;
+}
