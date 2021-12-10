@@ -18,144 +18,98 @@
       same time!
     </p>
     <script>
-     /* const category1 = "Clothes ~ unisex clothing";
-      const category2 = "Food ~ fresh and delicious";
-      const category3 = "Flowers ~ for all occasions";
-      const category4 = "Cooked food ~ for lunch and supper";
-      const category5 = "Fruits";
-      const category6 = "Clothes ~ only for women";
-      const category7 = "Vegetables";
-      const category8 = "Sandwiches and toasts";
-      const category9 = "Bread and cookies";
-*/
-      const category = [
-        "Clothes ~ unisex clothing",
-        "Food ~ fresh and delicious",
-        "Flowers ~ for all occasions",
-        "Cooked food ~ for lunch and supper",
-        "Fruits",
-        "Clothes ~ only for women",
-        "Vegetables",
-        "Sandwiches and toasts",
-        "Bread and cookies",
-      ]
+  
+     
       let index=0;
+
+        function logSomeDome(){
+        // const bcElement=document.getElementById("payment").children.item(2)
+        //   console.log(bcElement)
+
+        // const listType= "ol"
+        //  const parentElement= document.getElementById("payment")
+        //  const myUl=document.createElement(listType)
+        //  parentElement.appendChild(myUl)
+        //  const firstLi=document.createElement("li")
+        //  myUl.appendChild(firstLi)
+        //  firstLi.innerHTML="item1"
+        //  const otherLi=document.createElement("li")
+        //  myUl.appendChild(otherLi)
+        //   otherLi.innerHTML="item2"
+          // const l=document.createElement("li")
+          // l.innerHTML="item 1"
+          // document.getElementById("payment").appendChild(l)
+        
+        
+        }
+  
+        const categObjects=[
+    {
+      description:"Clothes ~ unisex clothing",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/jeans_1f456.png",
+    },
+    {
+      description:"Food ~ fresh and delicious",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/egg_1f95a.png"
+    },
+    {
+      description:"Flowers ~ for all occasions",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bouquet_1f490.png"
+    },
+    {
+      description:"Cooked food ~ for lunch and supper",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/spaghetti_1f35d.png"
+    },
+    {
+      description:"Fruits",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/lemon_1f34b.png"
+    },
+    {
+      description:"Clothes ~ only for women",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/womans-clothes_1f45a.png"
+    },
+    {
+      description:"Vegetables",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/eggplant_1f346.png"
+    },
+    {
+      description:"Sandwiches and toasts",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/sandwich_1f96a.png"
+    },
+    {
+      description:"Bread and cookies",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bread_1f35e.png"
+    }
+  
+  
+  
+  ]
     </script>
 
 
 
-<div class="store-front">
+<div class="store-front" id="storeFront"name="storeFront">
   <script>
-    for (let idx in category){
-    document.write(`<div class="store-item"><p>${category[idx]}</p></div>`)
+    for (let idx in categObjects){
+     // document.write(`<div class="store-item"><img class="food" src="${categObjects[idx].imageURI}"><p>${categObjects[idx].description}</p></div>`)
+       const parentElement=document.getElementById("storeFront")
+        const myDiv=document.createElement("div")
+        myDiv.className="store-item" //So its getting the right style
+        parentElement.appendChild(myDiv)
+        const myImg=document.createElement("img")
+        myImg.src=categObjects[idx].imageURI
+        myImg.className="clothes"
+        myDiv.appendChild(myImg)
+        const myP=document.createElement("p")
+        myP.innerHTML=categObjects[idx].description
+        myDiv.appendChild(myP)
     }
   </script>
   </div>
  
 
 
-    <!-- <div class="store-front">
-      <div class="store-item">
-        <img
-          class="clothes out-of-stock"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/jeans_1f456.png"
-        />
-        <p>
-          <script>
-            document.write(category[0]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/egg_1f95a.png"
-        />
-        <p>
-          <script>
-            document.write(category[1]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="discount"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bouquet_1f490.png"
-        />
-        <p>
-          <script>
-            document.write(category[2]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/spaghetti_1f35d.png"
-        />
-        <p>
-          <script>
-            document.write(category[3]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/lemon_1f34b.png"
-        />
-        <p>
-          <script>
-            document.write(category[4]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="discount clothes"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/womans-clothes_1f45a.png"
-        />
-        <p>
-          <script>
-            document.write(category[5]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food out-of-stock"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/eggplant_1f346.png"
-        />
-        <p>
-          <script>
-            document.write(category[6]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food discount"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/sandwich_1f96a.png"
-        />
-        <p>
-          <script>
-            document.write(category[7]);
-          </script>
-        </p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bread_1f35e.png"
-        />
-        <p>
-          <script>
-            document.write(category[8]);
-          </script>
-        </p>
-      </div>
-    </div> -->
-
+   
     
     <div class="store-front">
       <div class="store-item">
@@ -244,5 +198,6 @@
         <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" />
       </div>
     </div>
+    <input type="button" value="Speak" onclick="logSomeDome()">
   </body>
 </html>
