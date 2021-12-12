@@ -22,26 +22,8 @@
      
       let index=0;
 
-       // function logSomeDome(){
-        // const bcElement=document.getElementById("payment").children.item(2)
-        //   console.log(bcElement)
-
-        // const listType= "ol"
-        //  const parentElement= document.getElementById("payment")
-        //  const myUl=document.createElement(listType)
-        //  parentElement.appendChild(myUl)
-        //  const firstLi=document.createElement("li")
-        //  myUl.appendChild(firstLi)
-        //  firstLi.innerHTML="item1"
-        //  const otherLi=document.createElement("li")
-        //  myUl.appendChild(otherLi)
-        //   otherLi.innerHTML="item2"
-        // const l=document.createElement("li")
-        // l.innerHTML="item 1"
-        // document.getElementById("payment").appendChild(l)
-        // }
-  
-        const categObjects=[
+      
+        const products=[
     {
       description:"Clothes ~ unisex clothing",
       imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/jeans_1f456.png",
@@ -57,11 +39,11 @@
       category:"food"
     },
     {
-      description:"Flowers ~ for all occasions",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bouquet_1f490.png",
+      description:"refreshing drinks",
+      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/312/tropical-drink_1f379.png",
       discount:true,
       outOfStock:false,
-      category:"none"
+      category:"beverage"
      },
     {
       description:"Cooked food ~ for lunch and supper",
@@ -115,35 +97,36 @@
 
 <div class="store-front" id="storeFront"name="storeFront">
   <script>
-    for (let idx in categObjects){
+    for (let idx in products){
      // document.write(`<div class="store-item"><img class="food" src="${categObjects[idx].imageURI}"><p>${categObjects[idx].description}</p></div>`)
       const parentElement=document.getElementById("storeFront")
       const myDiv=document.createElement("div")
         myDiv.className="store-item" //So its getting the right style
         parentElement.appendChild(myDiv)
       const myImg=document.createElement("img")
-        myImg.src=categObjects[idx].imageURI
+        myImg.src=products[idx].imageURI
         
-        if(categObjects[idx].category === "food") {
+        if(products[idx].category === "food") {
            myImg.className ="food"
          }
-         if(categObjects[idx].category === "clothes") {
+         if(products[idx].category === "clothes") {
          myImg.className ="clothes"
          }
-         if(categObjects[idx].category === "none") {
-           myImg.className =  ""
+         if(products[idx].category === "beverage") {
+           myImg.className =  "beverage"
          }
-         if(categObjects[idx].discount)
+         if(products[idx].discount)
         { myImg.classList.add ("discount") }
        
-        if(categObjects[idx].outOfStock){
+        if(products[idx].outOfStock){
           myImg.classList.add("out-of-stock")
+        
         }
         
 
         myDiv.appendChild(myImg)
         const myP=document.createElement("p")
-        myP.innerHTML=categObjects[idx].description
+        myP.innerHTML=products[idx].description
         myDiv.appendChild(myP)
     }
   </script>
@@ -153,93 +136,4 @@
 
    
     
-    <div class="store-front">
-      <div class="store-item">
-        <img
-          class="clothes out-of-stock"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/jeans_1f456.png"
-        />
-        <p>Clothes ~ unisex clothing</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/egg_1f95a.png"
-        />
-        <p>Food ~ fresh and delicious</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="discount"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bouquet_1f490.png"
-        />
-        <p>Flowers ~ for all occasions</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/spaghetti_1f35d.png"
-        />
-        <p>Cooked food ~ for lunch and supper</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/lemon_1f34b.png"
-        />
-        <p>Fruits</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="discount clothes"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/womans-clothes_1f45a.png"
-        />
-        <p>Clothes ~ only for women.</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food out-of-stock"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/eggplant_1f346.png"
-        />
-        <p>Vegetables</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food discount"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/sandwich_1f96a.png"
-        />
-        <p>Sandwiches and toasts</p>
-      </div>
-      <div class="store-item">
-        <img
-          class="food"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bread_1f35e.png"
-        />
-        <p>Bread and cookies</p>
-      </div>
-    </div>
-    <div class="payment-methods">
-      <div class="payment-method">
-        <p>Credit card</p>
-        <img
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/credit-card_1f4b3.png"
-        />
-      </div>
-      <div class="payment-method">
-        <p>Cash</p>
-        <img
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/euro-banknote_1f4b6.png"
-        />
-      </div>
-      <div class="payment-method-big">
-        <p>Bitcoin</p>
-        <img src="https://freesvg.org/img/bitcoin-0.png" />
-      </div>
-      <div class="payment-method">
-        <p>Paypal</p>
-        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" />
-      </div>
-    </div>
-    <!-- <input type="button" value="Speak" onclick="logSomeDome()"> -->
-  </body>
-</html>
+  
