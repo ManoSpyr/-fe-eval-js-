@@ -52,7 +52,9 @@ img:hover {
 .food {
     background-color: darkseagreen;
 }
-
+.beverage {
+    background-color: rgb(111, 241, 111);
+}
 .discount {
     border-radius: 20%;
     border-style: dotted;
