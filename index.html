@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>-FE-EVAL-JS-</title>
     <link rel="stylesheet" href="main.css" />
+   <script src="mockup.js"></script>
   </head>
   <body>
     <h1>Mini market</h1>
@@ -17,123 +18,16 @@
       Keep an eye on our online store! You get quality and save money at the
       same time!
     </p>
-    <script>
-  
-     
-      let index=0;
-
-      
-        const products=[
-    {
-      description:"Clothes ~ unisex clothing",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/jeans_1f456.png",
-      discount:false,
-      outOfStock:true,
-      category:"clothes"
-    },
-    {
-      description:"Food ~ fresh and delicious",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/egg_1f95a.png",
-      discount:false,
-      outOfStock:false,
-      category:"food"
-    },
-    {
-      description:"refreshing drinks",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/312/tropical-drink_1f379.png",
-      discount:true,
-      outOfStock:false,
-      category:"beverage"
-     },
-    {
-      description:"Cooked food ~ for lunch and supper",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/spaghetti_1f35d.png",
-      discount:false,
-      outOfStock:false,
-      category:"food"
-    },
-    {
-      description:"Fruits",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/lemon_1f34b.png",
-      discount:false,
-      outOfStock:false,
-      category:"food"
-    },
-    {
-      description:"Clothes ~ only for women",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/womans-clothes_1f45a.png",
-      discount:true,
-      outOfStock:false,
-      category:"clothes"
-    },
-    {
-      description:"Vegetables",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/eggplant_1f346.png",
-      discount:false,
-      outOfStock:true,
-      category:"food"
-    },
-    {
-      description:"Sandwiches and toasts",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/sandwich_1f96a.png",
-      discount:true,
-      outOfStock:false,
-      category:"food"
-    },
-    {
-      description:"Bread and cookies",
-      imageURI:"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/265/bread_1f35e.png",
-      discount:false,
-      outOfStock:false,
-      category:"food"
-    }
-  
-  
-  
-  ]
-    </script>
-
-
-
-<div class="store-front" id="storeFront"name="storeFront">
-  <script>
-    for (let idx in products){
-     // document.write(`<div class="store-item"><img class="food" src="${categObjects[idx].imageURI}"><p>${categObjects[idx].description}</p></div>`)
-      const parentElement=document.getElementById("storeFront")
-      const myDiv=document.createElement("div")
-        myDiv.className="store-item" //So its getting the right style
-        parentElement.appendChild(myDiv)
-      const myImg=document.createElement("img")
-        myImg.src=products[idx].imageURI
-        
-        if(products[idx].category === "food") {
-           myImg.className ="food"
-         }
-         if(products[idx].category === "clothes") {
-         myImg.className ="clothes"
-         }
-         if(products[idx].category === "beverage") {
-           myImg.className =  "beverage"
-         }
-         if(products[idx].discount)
-        { myImg.classList.add ("discount") }
-       
-        if(products[idx].outOfStock){
-          myImg.classList.add("out-of-stock")
-        
-        }
-        
-
-        myDiv.appendChild(myImg)
-        const myP=document.createElement("p")
-        myP.innerHTML=products[idx].description
-        myDiv.appendChild(myP)
-    }
-  </script>
-  </div>
- 
-
-
-   
     
+    <div class="buttons">
+         <input type="button" value="Bargains first!" onclick="discountedFirst()">
+          <input type="button" value="Description (Asc)" onclick="sortOnDescription()">
+         <input type="button" value="Description (Desc)" onclick="sortOnDescriptionDesc()">
+      </div>
+      <div class="store-front" id="storeFront" name="storeFront">
+    </div>
+   
   
+  </body>
+  <script>createStoreFront()</script>
+</html>
