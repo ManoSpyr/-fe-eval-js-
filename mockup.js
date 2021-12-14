@@ -1,7 +1,3 @@
-
-
-
-
 const products = [
   {
     description: "Clothes ~ unisex clothing",
@@ -152,23 +148,10 @@ function discountedFirst() {
 }
 
 
+
 //=========================================================================
 //End of code temp notes 
-//</script>
-// const listType= "ol"
-//   const parentElement= document.getElementById("payment")
-//   const myUl=document.createElement(listType)
-//  parentElement.appendChild(myUl)
-//   const firstLi=document.createElement("li")
-//   myUl.appendChild(firstLi)
-//   firstLi.innerHTML="item1"
-//   const otherLi=document.createElement("li")
-//   myUl.appendChild(otherLi)
-//    otherLi.innerHTML="item2"
-//  const l=document.createElement("li")
-//  l.innerHTML="item 1"
-//  document.getElementById("payment").appendChild(l)
-//  }
+
 
 //  <div class="buttons">
 //     <input type="button" value="Bargains first!" onclick="discountedFirst()">
